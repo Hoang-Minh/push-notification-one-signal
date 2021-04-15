@@ -13,14 +13,16 @@ export class AppComponent implements OnInit {
 
     console.log('1. Init OneSignal');
     
-    let oneSignal = window["OneSignal"] || [];
+    const oneSignal = window["OneSignal"] || [];
 
     oneSignal.SERVICE_WORKER_PARAM = { scope: '/assets/js/' };
     oneSignal.SERVICE_WORKER_PATH = '../assets/js/OneSignalSDKWorker.js';
     oneSignal.SERVICE_WORKER_UPDATER_PATH = '../assets/js/OneSignalSDKUpdaterWorker.js';
 
+    console.log("app id", environment.oneSignalSafariId);
+
     const initConfig = {
-      appId: environment.oneSignalSafariId,
+      appId: environment.oneSignalAppId,
       safari_web_id: environment.oneSignalSafariId,
       autoResubscribe: true,
       allowLocalhostAsSecureOrigin: true,

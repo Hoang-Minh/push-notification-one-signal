@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  oneSignalAppId: "e5f39f48-c40c-4941-9c71-9fe270338ea1"
+  oneSignalAppId: "e5f39f48-c40c-4941-9c71-9fe270338ea1",
+  oneSignalSafariId: "web.onesignal.auto.4d0b3421-6847-4c4b-a531-b4bcf634e4d8"
 };
 
 /*

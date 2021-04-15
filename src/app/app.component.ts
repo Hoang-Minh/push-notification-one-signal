@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { environment } from './../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +18,7 @@ export class AppComponent implements OnInit {
     OneSignal.SERVICE_WORKER_UPDATER_PATH = '../assets/js/OneSignalSDKUpdaterWorker.js';
 
     const oneSignalInit = {
-      appId: process.env.oneSignalAppId,
+      appId: environment.oneSignalAppId,
       autoResubscribe: true,
       allowLocalhostAsSecureOrigin: true,
       promptOptions: {

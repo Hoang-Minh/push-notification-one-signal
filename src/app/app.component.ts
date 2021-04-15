@@ -15,9 +15,10 @@ export class AppComponent implements OnInit {
     
     let oneSignal = window["OneSignal"] || [];
 
-    oneSignal.SERVICE_WORKER_PARAM = { scope: '/assets/js/one-signal/' };
-    oneSignal.SERVICE_WORKER_PATH = '../assets/js/one-signal/OneSignalSDKWorker.js';
-    oneSignal.SERVICE_WORKER_UPDATER_PATH = '../assets/js/one-signal/OneSignalSDKUpdaterWorker.js';
+    oneSignal.SERVICE_WORKER_PARAM = { scope: '/assets/js/' };
+    oneSignal.SERVICE_WORKER_PATH = '../assets/js/OneSignalSDKWorker.js';
+    oneSignal.SERVICE_WORKER_UPDATER_PATH = '../assets/js/OneSignalSDKUpdaterWorker.js';
+
     const initConfig = {
       appId: environment.oneSignalSafariId,
       safari_web_id: environment.oneSignalSafariId,

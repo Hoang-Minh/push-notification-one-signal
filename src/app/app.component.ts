@@ -19,6 +19,7 @@ export class AppComponent implements OnInit {
 
     const oneSignalInit = {
       appId: environment.oneSignalAppId,
+      safari_web_id: environment.oneSignalSafariId,
       autoResubscribe: true,
       allowLocalhostAsSecureOrigin: true,
       promptOptions: {

@@ -14,11 +14,6 @@ export class AppComponent implements OnInit {
     console.log('1. Init OneSignal');
     
     const oneSignal = window["OneSignal"] || [];
-
-    oneSignal.SERVICE_WORKER_PARAM = { scope: '/assets/js/' };
-    oneSignal.SERVICE_WORKER_PATH = '../assets/js/OneSignalSDKWorker.js';
-    oneSignal.SERVICE_WORKER_UPDATER_PATH = '../assets/js/OneSignalSDKUpdaterWorker.js';
-
     console.log("app id", environment.oneSignalSafariId);
 
     const initConfig = {
@@ -42,10 +37,13 @@ export class AppComponent implements OnInit {
       persistNotification: false          
     };        
 
-    oneSignal.push(function() {          
+    oneSignal.push(function() { 
 
+      oneSignal.SERVICE_WORKER_PARAM = { scope: '/assets/js/' };
+      oneSignal.SERVICE_WORKER_PATH = '../assets/js/OneSignalSDKWorker.js';
+      oneSignal.SERVICE_WORKER_UPDATER_PATH = '../assets/js/OneSignalSDKUpdaterWorker.js';
       oneSignal.init(initConfig);
-    });
+     });
     
   }
 }
